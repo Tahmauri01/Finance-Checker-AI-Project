@@ -1,13 +1,13 @@
 Main Object:
 
 Transaction(class):
-Attributes - id, date, name, amount, account, category, type
+Attributes - id, date, description, amount, account, category, type
 Methods - from_row()
 
-User_Profile(class):
-Attributes - id, name, monthly_income, pay_schedule, accounts, budget, savings_goal
+UserProfile(class):
+Attributes - id, name, monthly_income, pay_schedule, accounts, budgets, savings_goals
 Methods - N/A
 
-Financer(class):
-Attributes - Transactions
-Methods - 
+FinanceAnalyzer(class):
+Attributes - transactions
+Methods - load_transactions(), compare_months(), spending_by_category(), least_spending_month(), highest_spending_month(), largest_expenses(), reoccuring_chargest(), categorize()
