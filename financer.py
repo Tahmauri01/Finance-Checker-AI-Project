@@ -53,10 +53,6 @@ class FinanceAnalyzer:
 
             return transactions
 
-
-    def compare_months(self, month_a: str, month_b: str) -> dict[str, dict[str, float]]:
-        pass
-
     def spending_by_category(self, month: str) -> dict[str, float]:
         totals = {}
 
@@ -68,6 +64,14 @@ class FinanceAnalyzer:
                 totals[category] = totals.get(category, 0) + abs(t.amount)
 
         return totals
+
+
+    def compare_months(self, month_a: str, month_b: str) -> dict[str, dict[str, float]]:
+        return {
+            month_a: self.spending_by_category(month_a),
+            month_b: self.spending_by_category(month_b)
+        }
+
 
     def monthly_total(self, year: int) -> dict[int, float]:             # helper function for least and highest spending month functions
         totals = {}
@@ -101,18 +105,30 @@ class FinanceAnalyzer:
         return f"Highest Spending Month: {name} - ${amount:.2f}"
 
     
-    def largest_expenses(self, n: int = 5) -> list[Transaction]:
-        expenses = []
+    def largest_seen(self, n: int = 5) -> list[Transaction]:
+        seen = []
 
         for t in self.transactions:
             if t.type == "expense":
-                expenses.append(t)
+                seen.append(t)
 
-        return sorted(expenses, key=lambda t: abs(t.amount), reverse=True)[:n]
+        return sorted(seen, key=lambda t: abs(t.amount), reverse=True)[:n]
 
 
-    def reccuring_charges(self) -> list[Transaction]:
-        pass
+    def recuring_charges(self) -> list[str]:
+        seen = set()
+        repeat = set()
+
+        for t in self.transactions:
+            if t.type != "expense":
+                continue
+            if t.description not in seen:
+                seen.add(t.description)
+                continue
+            repeat.add(t.description)
+
+        return list(repeat)
+
 
     def get_uncategorized(self) -> list[Transaction]:
         pass
