@@ -69,14 +69,47 @@ class FinanceAnalyzer:
 
         return totals
 
+    def monthly_total(self, year: int) -> dict[int, float]:             # helper function for least and highest spending month functions
+        totals = {}
+        for month in range(1,13):
+            spent = sum(self.spending_by_category(f"{year}-{month:02d}").values())
+            totals[month] = spent
+
+        return totals
+
     def least_spending_month(self, year: int) -> str:
-        pass
+        totals = self.monthly_total(year)
+        if not totals:
+            return f"No spending data for {year}"
+
+        month = min(totals, key=totals.get)
+        amount = totals[month]
+        name = date(year, month, 1).strftime("%B")
+
+        return f"Least Spending Month: {name} - ${amount:.2f}"
+
 
     def highest_spending_month(self, year: int) -> str:
-        pass
+        totals = self.monthly_total(year)
+        if not totals:
+            return f"No spending data for {year}"
 
+        month = max(totals, key=totals.get)
+        amount = totals[month]
+        name = date(year, month, 1).strftime("%B")
+
+        return f"Highest Spending Month: {name} - ${amount:.2f}"
+
+    
     def largest_expenses(self, n: int = 5) -> list[Transaction]:
-        pass
+        expenses = []
+
+        for t in self.transactions:
+            if t.type == "expense":
+                expenses.append(t)
+
+        return sorted(expenses, key=lambda t: abs(t.amount), reverse=True)[:n]
+
 
     def reccuring_charges(self) -> list[Transaction]:
         pass
