@@ -2,6 +2,8 @@ import csv
 from dataclasses import dataclass
 from datetime import date
 
+CATEGORIES = {"dining", "groceries", "gas", "rent", "subscriptions", "shopping", "other"}
+
 @dataclass
 class Transaction:
     # Transactions of csv file and it's attributes
@@ -44,6 +46,7 @@ class FinanceAnalyzer:
 
     @staticmethod
     def load_transactions(csv_path: str) -> list[Transaction]:
+        """Loads transactions from a csv file"""
         transactions = []
 
         with open(csv_path, 'r', newline='') as t_file:      #opens and reads csv file
@@ -54,6 +57,7 @@ class FinanceAnalyzer:
             return transactions
 
     def spending_by_category(self, month: str) -> dict[str, float]:
+        """Finds amount spent on each category in a given month"""
         totals = {}
 
         for t in self.transactions:
@@ -94,6 +98,7 @@ class FinanceAnalyzer:
 
 
     def highest_spending_month(self, year: int) -> str:
+        """Finds month with the highest spending for given year"""
         totals = self.monthly_total(year)
         if not totals:
             return f"No spending data for {year}"
@@ -106,6 +111,7 @@ class FinanceAnalyzer:
 
     
     def largest_seen(self, n: int = 5) -> list[Transaction]:
+        """Finds top n largest expenses"""
         seen = []
 
         for t in self.transactions:
@@ -116,6 +122,7 @@ class FinanceAnalyzer:
 
 
     def recuring_charges(self) -> list[str]:
+        """Finds recuring charges"""
         seen = set()
         repeat = set()
 
@@ -130,11 +137,28 @@ class FinanceAnalyzer:
         return list(repeat)
 
 
-    def get_uncategorized(self) -> list[Transaction]:
-        pass
+    def find_uncategorized(self) -> list[Transaction]:
+        """finds transactions without a category"""
+        uncategorized = []
+
+        for t in self.transactions:
+            if t.category is None:
+                uncategorized.append(t)
+
+        return uncategorized
 
     def categorize(self, transaction_ids: list[int], category: str) -> int:
-        pass
+
+        if category not in CATEGORIES:
+            raise ValueError(f"Use one of these categories: {CATEGORIES}")
+        
+        count = 0
+        for t in self.transactions:
+            if t.id in transaction_ids:
+                t.category = category
+                count += 1
+
+        return count
 
 
     
