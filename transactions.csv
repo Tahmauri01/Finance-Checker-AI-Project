@@ -1,0 +1,16 @@
+id,date,description,amount,account,category,type
+1,2026-10-01,Groceries,-52.14,Checking,groceries,expense
+2,2026-10-02,Paycheck,2500.00,Checking,,income
+3,2026-10-05,Gas,-36.80,Checking,gas,expense
+4,2026-10-07,Coffee Shop,-12.50,Checking,dining,expense
+5,2026-10-08,Rent,-1200.00,Checking,rent,expense
+6,2026-10-09,Streaming Service,-14.99,Checking,subscriptions,expense
+7,2026-10-10,Target Purchase,-86.21,Checking,shopping,expense
+8,2026-10-12,Salary Deposit,2500.00,Checking,,income
+9,2026-10-13,Restaurant,-28.75,Checking,dining,expense
+10,2026-10-15,Electric Bill,-94.52,Checking,other,expense
+11,2026-10-18,Pharmacy,-19.40,Checking,groceries,expense
+12,2026-10-20,Freelance Project,600.00,Checking,,income
+13,2026-10-21,Movie Night,-22.00,Checking,dining,expense
+14,2026-10-23,Grocerystore,-63.48,Checking,groceries,expense
+15,2026-10-25,Internet Bill,-69.99,Checking,subscriptions,expense

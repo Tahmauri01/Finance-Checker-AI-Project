@@ -24,7 +24,7 @@ class Transaction:
             description=row["description"],
             amount=float(row["amount"]),
             account=row["account"],
-            category=row["category"],
+            category=row["category"] or None,
             type=row["type"],
         )
 
