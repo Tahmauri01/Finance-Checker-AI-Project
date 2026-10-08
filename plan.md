@@ -10,4 +10,11 @@ Methods - N/A
 
 FinanceAnalyzer(class):
 Attributes - transactions
-Methods - load_transactions(), compare_months(), spending_by_category(), least_spending_month(), highest_spending_month(), largest_expenses(), reoccuring_chargest(), categorize()
+Methods - load_transactions(), compare_months(), spending_by_category(), least_spending_month(), highest_spending_month(), largest_seen(), recuring_chargest(), categorize()
+
+
+TODO:
+
+- RAG implementation: common financial practices that could help in a certian situation
+- Agentic AI + tools
+- Add more transactions to csv file

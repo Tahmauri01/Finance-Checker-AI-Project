@@ -1,16 +1,180 @@
 id,date,description,amount,account,category,type
-1,2026-10-01,Groceries,-52.14,Checking,groceries,expense
-2,2026-10-02,Paycheck,2500.00,Checking,,income
-3,2026-10-05,Gas,-36.80,Checking,gas,expense
-4,2026-10-07,Coffee Shop,-12.50,Checking,dining,expense
-5,2026-10-08,Rent,-1200.00,Checking,rent,expense
-6,2026-10-09,Streaming Service,-14.99,Checking,subscriptions,expense
-7,2026-10-10,Target Purchase,-86.21,Checking,shopping,expense
-8,2026-10-12,Salary Deposit,2500.00,Checking,,income
-9,2026-10-13,Restaurant,-28.75,Checking,dining,expense
-10,2026-10-15,Electric Bill,-94.52,Checking,other,expense
-11,2026-10-18,Pharmacy,-19.40,Checking,groceries,expense
-12,2026-10-20,Freelance Project,600.00,Checking,,income
-13,2026-10-21,Movie Night,-22.00,Checking,dining,expense
-14,2026-10-23,Grocerystore,-63.48,Checking,groceries,expense
-15,2026-10-25,Internet Bill,-69.99,Checking,subscriptions,expense
+1,2026-01-01,Rent,-1200.00,Checking,rent,expense
+2,2026-01-02,Paycheck,2500.00,Checking,,income
+3,2026-01-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+4,2026-01-04,Supermarket,-53.47,Checking,groceries,expense
+5,2026-01-07,Gas,-43.94,Checking,gas,expense
+6,2026-01-09,Streaming Service,-14.99,Checking,subscriptions,expense
+7,2026-01-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+8,2026-01-12,Coffee Shop,-33.68,Checking,dining,expense
+9,2026-01-15,Electric Bill,-108.37,Checking,other,expense
+10,2026-01-16,Salary Deposit,2500.00,Checking,,income
+11,2026-01-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+12,2026-01-18,Online Order,-40.94,Checking,shopping,expense
+13,2026-01-19,Misc Purchase,-29.91,Checking,,expense
+14,2026-01-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+15,2026-01-25,Internet Bill,-69.99,Checking,subscriptions,expense
+16,2026-02-01,Rent,-1200.00,Checking,rent,expense
+17,2026-02-02,Paycheck,2500.00,Checking,,income
+18,2026-02-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+19,2026-02-08,Farmers Market,-52.12,Checking,groceries,expense
+20,2026-02-09,Streaming Service,-14.99,Checking,subscriptions,expense
+21,2026-02-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+22,2026-02-10,Gas,-46.85,Checking,gas,expense
+23,2026-02-13,Coffee Shop,-36.56,Checking,dining,expense
+24,2026-02-15,Electric Bill,-108.99,Checking,other,expense
+25,2026-02-16,Salary Deposit,2500.00,Checking,,income
+26,2026-02-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+27,2026-02-19,Online Order,-106.15,Checking,shopping,expense
+28,2026-02-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+29,2026-02-24,Venmo Payment,-21.96,Checking,,expense
+30,2026-02-25,Internet Bill,-69.99,Checking,subscriptions,expense
+31,2026-03-01,Rent,-1200.00,Checking,rent,expense
+32,2026-03-02,Paycheck,2500.00,Checking,,income
+33,2026-03-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+34,2026-03-06,Supermarket,-84.39,Checking,groceries,expense
+35,2026-03-09,Streaming Service,-14.99,Checking,subscriptions,expense
+36,2026-03-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+37,2026-03-14,Sushi Takeout,-14.37,Checking,dining,expense
+38,2026-03-15,Electric Bill,-75.80,Checking,other,expense
+39,2026-03-16,Salary Deposit,2500.00,Checking,,income
+40,2026-03-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+41,2026-03-17,Gas,-30.13,Checking,gas,expense
+42,2026-03-20,Venmo Payment,-64.59,Checking,,expense
+43,2026-03-22,Clothing Store,-71.96,Checking,shopping,expense
+44,2026-03-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+45,2026-03-25,Internet Bill,-69.99,Checking,subscriptions,expense
+46,2026-04-01,Rent,-1200.00,Checking,rent,expense
+47,2026-04-02,Paycheck,2500.00,Checking,,income
+48,2026-04-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+49,2026-04-04,Grocerystore,-87.66,Checking,groceries,expense
+50,2026-04-09,Streaming Service,-14.99,Checking,subscriptions,expense
+51,2026-04-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+52,2026-04-14,Pizza Delivery,-25.87,Checking,dining,expense
+53,2026-04-15,Electric Bill,-116.38,Checking,other,expense
+54,2026-04-16,Salary Deposit,2500.00,Checking,,income
+55,2026-04-16,Gas,-32.39,Checking,gas,expense
+56,2026-04-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+57,2026-04-20,Target Purchase,-74.82,Checking,shopping,expense
+58,2026-04-21,Misc Purchase,-69.68,Checking,,expense
+59,2026-04-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+60,2026-04-25,Internet Bill,-69.99,Checking,subscriptions,expense
+61,2026-05-01,Rent,-1200.00,Checking,rent,expense
+62,2026-05-02,Paycheck,2500.00,Checking,,income
+63,2026-05-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+64,2026-05-06,Gas,-34.18,Checking,gas,expense
+65,2026-05-07,Supermarket,-94.42,Checking,groceries,expense
+66,2026-05-09,Streaming Service,-14.99,Checking,subscriptions,expense
+67,2026-05-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+68,2026-05-12,Pizza Delivery,-39.50,Checking,dining,expense
+69,2026-05-15,Electric Bill,-79.80,Checking,other,expense
+70,2026-05-16,Salary Deposit,2500.00,Checking,,income
+71,2026-05-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+72,2026-05-20,Hardware Store,-44.10,Checking,shopping,expense
+73,2026-05-22,Misc Purchase,-80.73,Checking,,expense
+74,2026-05-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+75,2026-05-25,Internet Bill,-69.99,Checking,subscriptions,expense
+76,2026-06-01,Rent,-1200.00,Checking,rent,expense
+77,2026-06-02,Paycheck,2500.00,Checking,,income
+78,2026-06-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+79,2026-06-07,Farmers Market,-88.66,Checking,groceries,expense
+80,2026-06-09,Streaming Service,-14.99,Checking,subscriptions,expense
+81,2026-06-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+82,2026-06-12,Gas,-48.11,Checking,gas,expense
+83,2026-06-14,Restaurant,-19.27,Checking,dining,expense
+84,2026-06-15,Electric Bill,-88.88,Checking,other,expense
+85,2026-06-16,Salary Deposit,2500.00,Checking,,income
+86,2026-06-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+87,2026-06-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+88,2026-06-25,Internet Bill,-69.99,Checking,subscriptions,expense
+89,2026-06-25,Check #1042,-31.45,Checking,,expense
+90,2026-06-28,Farmers Market,-74.89,Checking,groceries,expense
+91,2026-07-01,Rent,-1200.00,Checking,rent,expense
+92,2026-07-02,Paycheck,2500.00,Checking,,income
+93,2026-07-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+94,2026-07-08,Farmers Market,-45.00,Checking,groceries,expense
+95,2026-07-09,Streaming Service,-14.99,Checking,subscriptions,expense
+96,2026-07-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+97,2026-07-10,Gas,-49.39,Checking,gas,expense
+98,2026-07-11,Coffee Shop,-15.35,Checking,dining,expense
+99,2026-07-15,Electric Bill,-129.85,Checking,other,expense
+100,2026-07-16,Salary Deposit,2500.00,Checking,,income
+101,2026-07-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+102,2026-07-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+103,2026-07-25,Internet Bill,-69.99,Checking,subscriptions,expense
+104,2026-07-26,Farmers Market,-49.08,Checking,groceries,expense
+105,2026-07-26,Misc Purchase,-33.86,Checking,,expense
+106,2026-08-01,Rent,-1200.00,Checking,rent,expense
+107,2026-08-02,Paycheck,2500.00,Checking,,income
+108,2026-08-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+109,2026-08-04,Groceries,-77.49,Checking,groceries,expense
+110,2026-08-09,Streaming Service,-14.99,Checking,subscriptions,expense
+111,2026-08-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+112,2026-08-13,Pizza Delivery,-13.90,Checking,dining,expense
+113,2026-08-15,Electric Bill,-103.19,Checking,other,expense
+114,2026-08-16,Salary Deposit,2500.00,Checking,,income
+115,2026-08-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+116,2026-08-18,Gas,-32.27,Checking,gas,expense
+117,2026-08-20,Online Order,-65.69,Checking,shopping,expense
+118,2026-08-20,Check #1042,-78.13,Checking,,expense
+119,2026-08-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+120,2026-08-25,Internet Bill,-69.99,Checking,subscriptions,expense
+121,2026-09-01,Rent,-1200.00,Checking,rent,expense
+122,2026-09-02,Paycheck,2500.00,Checking,,income
+123,2026-09-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+124,2026-09-05,Grocerystore,-60.57,Checking,groceries,expense
+125,2026-09-05,Gas,-44.17,Checking,gas,expense
+126,2026-09-09,Streaming Service,-14.99,Checking,subscriptions,expense
+127,2026-09-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+128,2026-09-12,Sushi Takeout,-43.37,Checking,dining,expense
+129,2026-09-15,Electric Bill,-100.46,Checking,other,expense
+130,2026-09-16,Salary Deposit,2500.00,Checking,,income
+131,2026-09-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+132,2026-09-23,ATM Withdrawal,-19.34,Checking,,expense
+133,2026-09-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+134,2026-09-25,Internet Bill,-69.99,Checking,subscriptions,expense
+135,2026-09-26,Supermarket,-73.94,Checking,groceries,expense
+136,2026-10-01,Groceries,-52.14,Checking,groceries,expense
+137,2026-10-02,Paycheck,2500.00,Checking,,income
+138,2026-10-05,Gas,-36.80,Checking,gas,expense
+139,2026-10-07,Coffee Shop,-12.50,Checking,dining,expense
+140,2026-10-08,Rent,-1200.00,Checking,rent,expense
+141,2026-10-09,Streaming Service,-14.99,Checking,subscriptions,expense
+142,2026-10-10,Target Purchase,-86.21,Checking,shopping,expense
+143,2026-10-12,Salary Deposit,2500.00,Checking,,income
+144,2026-10-13,Restaurant,-28.75,Checking,dining,expense
+145,2026-10-15,Electric Bill,-94.52,Checking,other,expense
+146,2026-10-18,Pharmacy,-19.40,Checking,groceries,expense
+147,2026-10-20,Freelance Project,600.00,Checking,,income
+148,2026-10-21,Movie Night,-22.00,Checking,dining,expense
+149,2026-10-23,Grocerystore,-63.48,Checking,groceries,expense
+150,2026-10-25,Internet Bill,-69.99,Checking,subscriptions,expense
+151,2026-11-01,Rent,-1200.00,Checking,rent,expense
+152,2026-11-02,Paycheck,2500.00,Checking,,income
+153,2026-11-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+154,2026-11-04,Groceries,-80.25,Checking,groceries,expense
+155,2026-11-09,Streaming Service,-14.99,Checking,subscriptions,expense
+156,2026-11-09,Gas,-45.81,Checking,gas,expense
+157,2026-11-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+158,2026-11-11,Sushi Takeout,-36.80,Checking,dining,expense
+159,2026-11-15,Electric Bill,-122.68,Checking,other,expense
+160,2026-11-16,Salary Deposit,2500.00,Checking,,income
+161,2026-11-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+162,2026-11-21,Check #1042,-54.58,Checking,,expense
+163,2026-11-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+164,2026-11-25,Internet Bill,-69.99,Checking,subscriptions,expense
+165,2026-12-01,Rent,-1200.00,Checking,rent,expense
+166,2026-12-02,Paycheck,2500.00,Checking,,income
+167,2026-12-03,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+168,2026-12-05,Grocerystore,-79.21,Checking,groceries,expense
+169,2026-12-09,Streaming Service,-14.99,Checking,subscriptions,expense
+170,2026-12-10,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+171,2026-12-14,Pizza Delivery,-25.33,Checking,dining,expense
+172,2026-12-15,Electric Bill,-106.40,Checking,other,expense
+173,2026-12-16,Salary Deposit,2500.00,Checking,,income
+174,2026-12-17,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+175,2026-12-19,Gas,-31.27,Checking,gas,expense
+176,2026-12-20,Target Purchase,-72.95,Checking,shopping,expense
+177,2026-12-22,Misc Purchase,-31.52,Checking,,expense
+178,2026-12-24,Meal Kit Subscription,-11.99,Checking,subscriptions,expense
+179,2026-12-25,Internet Bill,-69.99,Checking,subscriptions,expense

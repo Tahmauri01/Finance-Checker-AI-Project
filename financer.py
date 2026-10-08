@@ -31,7 +31,7 @@ class Transaction:
 @dataclass
 class UserProfile:         #creates user profile
     id: int
-    description: str
+    name: str
     monthly_income: float
     pay_schedule: str
     accounts: list
@@ -44,8 +44,7 @@ class FinanceAnalyzer:
         self.user = user
         self.transactions: list[Transaction] = []
 
-    @staticmethod
-    def load_transactions(csv_path: str) -> list[Transaction]:
+    def load_transactions(self, csv_path: str) -> list[Transaction]:
         """Loads transactions from a csv file"""
         transactions = []
 
@@ -54,6 +53,8 @@ class FinanceAnalyzer:
             for row in t_file_d:
                 transactions.append(Transaction.from_row(row))          #calls from_row to turn csv line into a transaction
 
+            self.transactions = transactions
+            # print(transactions)
             return transactions
 
     def spending_by_category(self, month: str) -> dict[str, float]:
@@ -62,15 +63,19 @@ class FinanceAnalyzer:
 
         for t in self.transactions:
             if t.date.strftime("%Y-%m") == month:
+                # print(True)
                 if t.type != "expense":
                     continue
                 category = t.category or "uncategorized"
                 totals[category] = totals.get(category, 0) + abs(t.amount)
 
-        return totals
+        return {category: round(total, 2) for category, total in totals.items()}
 
 
     def compare_months(self, month_a: str, month_b: str) -> dict[str, dict[str, float]]:
+        if month_a == month_b:
+            raise ValueError("compare_month needs two different months")
+        
         return {
             month_a: self.spending_by_category(month_a),
             month_b: self.spending_by_category(month_b)
@@ -87,7 +92,7 @@ class FinanceAnalyzer:
 
     def least_spending_month(self, year: int) -> str:
         totals = self.monthly_total(year)
-        if not totals:
+        if not any(totals.values()):
             return f"No spending data for {year}"
 
         month = min(totals, key=totals.get)
@@ -100,7 +105,7 @@ class FinanceAnalyzer:
     def highest_spending_month(self, year: int) -> str:
         """Finds month with the highest spending for given year"""
         totals = self.monthly_total(year)
-        if not totals:
+        if not any(totals.values()):
             return f"No spending data for {year}"
 
         month = max(totals, key=totals.get)
@@ -112,6 +117,9 @@ class FinanceAnalyzer:
     
     def largest_seen(self, n: int = 5) -> list[Transaction]:
         """Finds top n largest expenses"""
+        if n <= 0:
+            return ValueError("n must be a positive/non-zero number")
+        
         seen = []
 
         for t in self.transactions:
@@ -154,7 +162,7 @@ class FinanceAnalyzer:
         
         count = 0
         for t in self.transactions:
-            if t.id in transaction_ids:
+            if t.id in transaction_ids and t.type == "expense":
                 t.category = category
                 count += 1
 
