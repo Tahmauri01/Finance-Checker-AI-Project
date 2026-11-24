@@ -88,8 +88,10 @@ class FinanceAnalyzer:
         totals = {}
         for month in range(1,13):
             spent = sum(self.spending_by_category(f"{year}-{month:02d}").values())
-            totals[month] = spent
+            totals[month] = round(spent, 2)
 
+        if not totals:
+            return f"No spending from the year {year}"
         return totals
 
     def least_spending_month(self, year: int) -> str:
@@ -120,7 +122,7 @@ class FinanceAnalyzer:
     def largest_seen(self, n: int = 5) -> list[Transaction]:
         """Finds top n largest expenses"""
         if n <= 0:
-            return ValueError("n must be a positive/non-zero number")
+            raise ValueError("n must be a positive/non-zero number")
         
         seen = []
 
