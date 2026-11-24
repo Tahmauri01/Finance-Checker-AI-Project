@@ -11,14 +11,17 @@
                 "description": "Directory path/file name to the csv file with the transactions listed",
             },
         },
-        "required": {
-            ["csv_path"]
-        }
+        "required": ["csv_path"]
     }
 },
 {
     "name": "spending_by_category",
-    "description": (),
+    "description": (
+        "Calculates total amount spent in each category of a specific month. "
+        "Returns each category's total for the month specified. "
+        "Use this for questions asking for how much was spent on a certain category in a month. Ex: 'How much did I spend on gas in September?' "
+        "Amounts are positive dollar values. Only expenses are counted. "
+    ),
     "input_schema": {
         "type": "object",
         "properties": {
@@ -27,88 +30,153 @@
                 "description": "The month in a YYYY-MM format. EX: 2026-10"
             },
         },
-        "required": {
-            ["month"]
-        }
+        "required": ["month"]
     }
 },
 {
     "name": "compare_months",
-    "description": (),
+    "description": (
+        "Compares transactions grouped by category between two months. "
+        "Returns each month's category total side by side. "
+        "Use this for questions comparing two months. Ex: 'Did I spend more money in March or February?'. "
+        "Amounts are positive dollar values. Only expenses are counted. "
+    ),
     "input_schema": {
         "type": "object",
         "properties": {
-
-        }
+            "month_a":{
+                "type": "string",
+                "description": "The first month, being compared to month_b. Entered in a YYYY-MM format. Should not match month_b"
+            },
+            "month_b":{
+                "type": "string",
+                "description": "The second month, being compared to month_a. Entered in a YYYY-MM format. Should not match month_a"
+            }
+        },
+        "required": ["month_a", "month_b"]
     }
 },
 {
     "name": "monthly_total",
-    "description": (),
+    "description": (
+        "Calculates each month's total expenses based on the specified year. "
+        "Returns the total of the expenses for every month in that specific year. "
+        "Use for questions asking how much was spent in a certain month. Ex: 'How much did I spend in January 2024?' "
+        "Amounts are positive dollar values. Only expenses are counted. "
+    ),
     "input_schema": {
         "type": "object",
         "properties": {
-
-        }
+            "year": {
+                "type": "integer",
+                "description": "The year of which months will be calculated. Entered in YYYY format."
+            }
+        },
+        "required": ["year"],
     }
 },
 {
     "name": "least_spending_month",
-    "description": (),
+    "description": (
+        "Determines the month with the lowest expense for the specified year. "
+        "Returns the month with the smallest total expenses for the year specified. "
+        "Use for questions asking which month they spent the least money in. Ex: 'In 2021, which month did I spend the least in?' "
+        "Amounts are positive dollar values. Only expenses are counted. "
+    ),
     "input_schema": {
         "type": "object",
         "properties": {
-
-        }
+            "year": {
+                "type": "integer",
+                "description": "The year of which month's expenses will be compared. Entered in YYYY format."
+            }
+        },
+        "required": ["year"],
     }
 },
 {
     "name": "highest_spending_month",
-    "description": (),
+    "description": (
+        "Determines the month with the highest expense for the specified year. "
+        "Returns the month with the largest total expenses for the year specified. "
+        "Use for questions asking which month they spent the most money in. Ex: 'In 2021, which month did I spend the most in?' "
+        "Amounts are positive dollar values. Only expenses are counted. "
+    ),
     "input_schema": {
         "type": "object",
         "properties": {
-
-        }
+            "year": {
+                "type": "integer",
+                "description": "The year of which month's expenses will be compared. Entered in YYYY format."
+            }
+        },
+        "required": ["year"],
     }
 },
 {
     "name": "largest_seen",
-    "description": (),
+    "description": (
+        "Determines the top n largest expenses in entire financial file. "
+        "Returns top n largest expenses in financial file listed from largest to smallest. "
+        "Use for questions asking what the largest expenses are. Ex: 'What are my top 10 largest expenses?' "
+        "Amounts are positive dollar values. Only expenses are counted. "
+    ),
     "input_schema": {
         "type": "object",
         "properties": {
-
-        }
+            "n": {
+                "type": "integer",
+                "decription": "The amount of transactions listed"
+            }
+        },
+        "required": [],
     }
 },
 {
     "name": "recuring_charges",
-    "description": (),
+    "description": (
+        "Determines transactions from the same merchant that occur more than once. "
+        "Returns list of the merchant names that repeat. "
+        "Use for questions asking what their subscriptions or reoccuring charges are. Ex: What subcriptions am I signed up for?"
+    ),
     "input_schema": {
         "type": "object",
-        "properties": {
-
-        }
+        "properties": {},
+        "required": []
     }
 },
 {
     "name": "find_uncategorized",
-    "description": (),
+    "description": (
+        "Determines all transactions with a category of None. "
+        "Returns lists of transactions with a category of None. "
+        "Use to find transactions with no categories to then combine it with the categorize method"
+    ),
     "input_schema": {
         "type": "object",
-        "properties": {
-
-        }
+        "properties": {},
+        "required": []
     }
 },
 {
     "name": "categorize",
-    "description": (),
+    "description": (
+        "Applies an existing category to a transaction. "
+        "Returns the count of transactions that had their categories changes. "
+        "Use when asked to categorize a transaction. Ex: If there is a transaction without a category, change it to groceries."
+    ),
     "input_schema": {
         "type": "object",
         "properties": {
-
-        }
+            "transaction_ids": {
+                "type": "array",
+                "description": "List of transaction ids whose transaction categories is being changed."
+            },
+            "category": {
+                "type": "string",
+                "description": "Category of which the transaction is being changed to."
+            }
+        },
+        "required": ["transaction_ids", "category"]
     }
 },

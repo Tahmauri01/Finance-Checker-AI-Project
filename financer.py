@@ -2,6 +2,8 @@ import csv
 from dataclasses import dataclass
 from datetime import date
 
+#TODO: add web page using react
+
 CATEGORIES = {"dining", "groceries", "gas", "rent", "subscriptions", "shopping", "other"}
 
 @dataclass
