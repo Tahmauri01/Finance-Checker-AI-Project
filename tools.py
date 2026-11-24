@@ -1,6 +1,7 @@
 import json
 from dataclasses import asdict, is_dataclass
 
+TOOLS = [
 {
     "name": "spending_by_category",
     "description": (
@@ -167,7 +168,7 @@ from dataclasses import asdict, is_dataclass
         "required": ["transaction_ids", "category"]
     }
 },
-
+]
 
 def to_text(result) -> str:
     if isinstance(result, list):

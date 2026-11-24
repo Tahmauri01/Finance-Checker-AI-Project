@@ -1,0 +1,14 @@
+[
+  {
+    "title": "50/30/20 Rule",
+    "when_to_use": "Someone has no budget yet or wants a simple way to split income between needs, wants, and savings.",
+    "how_it_works": "Put 50% of after-tax income toward needs like rent and groceries, 30% toward wants like dining and shopping, and 20% toward savings or debt.",
+    "tags": ["budgeting", "beginner", "income"]
+  },
+  {
+    "title": "Sinking Funds",
+    "when_to_use": "Someone gets surprised by large irregular expenses, or is saving toward a goal with a deadline.",
+    "how_it_works": "Divide the target amount by the number of months until it's due, and set that amount aside every month in a separate account or category.",
+    "tags": ["saving", "goals", "irregular expenses"]
+  }
+]
