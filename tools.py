@@ -1,5 +1,6 @@
 import json
 from dataclasses import asdict, is_dataclass
+from rag import StrategyStore
 
 TOOLS = [
 {
@@ -168,6 +169,29 @@ TOOLS = [
         "required": ["transaction_ids", "category"]
     }
 },
+{
+    "name": "search_strategies",
+    "description": (
+        "Search a library of saving and budgeting strategies. "
+        "Use when the user asks for advice, is over budget, is behind on a savings goal, "
+        "or would benefit from a strategy. Describe their situation in the query. "
+        "Returns the most relevant strategies with a similarity score."
+    ),
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "The user's situation in plain words, e.g. 'overspending on dining, behind on emergency fund'.",
+            },
+            "k": {
+                "type": "integer",
+                "description": "How many strategies to return. Defaults to 3.",
+            },
+        },
+        "required": ["query"],
+    },
+},
 ]
 
 def to_text(result) -> str:
@@ -175,7 +199,7 @@ def to_text(result) -> str:
         result = [asdict(r) if is_dataclass(r) else r for r in result]
     return json.dumps(result, default=str)
 
-def run_tool(analyzer, name: str, args: dict) -> str:
+def run_tool(analyzer, store, name: str, args: dict) -> str:
     methods = {
         "spending_by_category": analyzer.spending_by_category,
         "compare_months": analyzer.compare_months,
@@ -186,6 +210,7 @@ def run_tool(analyzer, name: str, args: dict) -> str:
         "recurring_charges": analyzer.recurring_charges,
         "find_uncategorized": analyzer.find_uncategorized,
         "categorize": analyzer.categorize,
+        "search_strategies": store.search_strategies,
     }
 
     if name not in methods:

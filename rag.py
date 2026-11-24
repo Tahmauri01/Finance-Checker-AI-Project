@@ -19,9 +19,12 @@ class StrategyStore:
         """Combine the fields that describe a strategy into one string to embed."""
         return f"{s['title']}. {s['when_to_use']} {s['how_it_works']}"
 
+    #cosine similarity
     def search_strategies(self, query: str, k: int = 3) -> list[dict]:
         """Return the k strategies most similar to the query."""
         query_vec = self.model.encode([query], normalize_embeddings=True)[0]
         scores = self.embeddings @ query_vec
         top = np.argsort(scores)[::-1][:k]
         return [{**self.strategies[i], "score": round(float(scores[i]), 3)} for i in top]
+
+

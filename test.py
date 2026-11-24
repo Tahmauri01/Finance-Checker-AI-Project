@@ -1,4 +1,5 @@
 from financer import Transaction, UserProfile, FinanceAnalyzer
+from rag import StrategyStore
 
 user = UserProfile(
     id=1,
@@ -137,3 +138,9 @@ except ValueError as e:
     print(f"NOTE: malformed amount raises raw ValueError: {e}")
 finally:
     os.remove(bad_path)
+
+
+# Tsting scoring system for rag strategies
+store = StrategyStore("strategies.json")
+for s in store.search_strategies("I keep spending too much eating out"):
+    print(s["score"], s["title"])

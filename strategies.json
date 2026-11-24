@@ -3,12 +3,122 @@
     "title": "50/30/20 Rule",
     "when_to_use": "Someone has no budget yet or wants a simple way to split income between needs, wants, and savings.",
     "how_it_works": "Put 50% of after-tax income toward needs like rent and groceries, 30% toward wants like dining and shopping, and 20% toward savings or debt.",
-    "tags": ["budgeting", "beginner", "income"]
+    "tags": [
+      "budgeting", 
+      "beginner", 
+      "income"
+]
   },
   {
     "title": "Sinking Funds",
     "when_to_use": "Someone gets surprised by large irregular expenses, or is saving toward a goal with a deadline.",
     "how_it_works": "Divide the target amount by the number of months until it's due, and set that amount aside every month in a separate account or category.",
-    "tags": ["saving", "goals", "irregular expenses"]
+    "tags": [
+      "saving", 
+      "goals", 
+      "irregular expenses"
+    ]
+  },
+  {
+    "title": "24-Hour Rule for Impulse Purchases",
+    "when_to_use": "Someone makes frequent unplanned purchases, especially online shopping.",
+    "how_it_works": "Wait 24 hours before buying any non-essential item, or 30 days for larger purchases. Keep a wish list instead of buying right away. Many items no longer feel necessary after the wait.",
+    "tags": [
+      "shopping",
+      "impulse spending",
+      "habits"
+    ]
+  },
+  {
+    "title": "Weekly Spending Allowance",
+    "when_to_use": "Someone stays on budget early in the month but runs out of money before the month ends, or is paid weekly.",
+    "how_it_works": "Divide each flexible category's monthly budget into weekly amounts. Track spending against the weekly number instead of the monthly one, so overspending shows up within days instead of at the end of the month.",
+    "tags": [
+      "budgeting",
+      "weekly pay",
+      "dining",
+      "overspending"
+    ]
+  },
+  {
+    "title": "Paycheck-Aligned Bill Planning",
+    "when_to_use": "Someone runs short before payday even though their monthly income covers their monthly bills.",
+    "how_it_works": "List each paycheck date and each bill due date on a calendar. Assign every bill to a specific paycheck so that no single paycheck has to cover too much. Set aside part of each earlier paycheck for large bills like rent.",
+    "tags": [
+      "cash flow",
+      "bills",
+      "payday",
+      "weekly pay"
+    ]
+  },
+  {
+    "title": "Meal Planning",
+    "when_to_use": "Someone spends heavily on dining out or takeout, or groceries go to waste.",
+    "how_it_works": "Plan the week's meals before shopping, buy only what the plan needs, and cook larger batches for leftovers. Keep a few easy backup meals at home for nights when ordering out is most tempting.",
+    "tags": [
+      "dining",
+      "groceries",
+      "food"
+    ]
+  },
+  {
+    "title": "Grocery Cost Cutting",
+    "when_to_use": "Someone's grocery spending is over budget.",
+    "how_it_works": "Shop with a list, compare unit prices instead of package prices, choose store brands, and build meals around what is on sale. Avoid shopping hungry, and check what is already at home before buying more.",
+    "tags": [
+      "groceries",
+      "food",
+      "cutting costs"
+    ]
+  },
+  {
+    "title": "Lower Fixed Costs",
+    "when_to_use": "Someone has already trimmed flexible spending but is still short each month, or fixed bills take up most of their income.",
+    "how_it_works": "Review recurring bills like phone, internet, and insurance once a year. Compare prices with other providers, ask the current provider for a better rate, and drop add-ons you do not use. Savings on fixed costs repeat every month without any ongoing effort.",
+    "tags": [
+      "bills",
+      "fixed costs",
+      "cutting costs"
+    ]
+  },
+  {
+    "title": "Windfall Rule",
+    "when_to_use": "Someone receives extra money such as a bonus, tax refund, gift, or overtime and wants it to make a difference.",
+    "how_it_works": "Decide in advance how to split unexpected money, for example most of it toward savings goals or debt and a small part for something enjoyable. Having the rule ahead of time prevents the money from disappearing into everyday spending.",
+    "tags": [
+      "saving",
+      "goals",
+      "extra income"
+    ]
+  },
+  {
+    "title": "Debt Avalanche",
+    "when_to_use": "Someone has several debts and wants to pay the least interest overall.",
+    "how_it_works": "Make the minimum payment on every debt, then put all extra money toward the debt with the highest interest rate. When it is paid off, move that payment to the next highest rate.",
+    "tags": [
+      "debt",
+      "interest",
+      "planning"
+    ]
+  },
+  {
+    "title": "Debt Snowball",
+    "when_to_use": "Someone has several debts and needs quick wins to stay motivated.",
+    "how_it_works": "Make the minimum payment on every debt, then put all extra money toward the smallest balance. When it is paid off, roll that payment into the next smallest. It may cost more interest than the avalanche method but builds momentum.",
+    "tags": [
+      "debt",
+      "motivation",
+      "planning"
+    ]
+  },
+  {
+    "title": "Monthly Spending Review",
+    "when_to_use": "Someone does not regularly check their spending, or keeps going over budget without noticing until it is too late.",
+    "how_it_works": "Once a month, compare spending in each category to its budget, look at the largest expenses, and check for new recurring charges. Pick one category to improve next month instead of trying to fix everything at once.",
+    "tags": [
+      "habits",
+      "tracking",
+      "budgeting"
+    ]
   }
 ]

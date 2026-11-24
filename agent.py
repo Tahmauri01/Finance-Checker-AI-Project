@@ -3,6 +3,8 @@ from datetime import date
 from dotenv import load_dotenv
 from financer import FinanceAnalyzer, UserProfile
 from tools import TOOLS, run_tool
+from rag import StrategyStore
+
 
 load_dotenv()
 client = anthropic.Anthropic()
@@ -18,12 +20,12 @@ def build_system_prompt(user: UserProfile) -> str:
         "Always use the tools to get numbers, never calculate or guess amounts yourself. "
         "Months are in YYYY-MM format. "
         "If a tool returns an error, read it and try again with corrected input. "
+        "When giving advice, use search_strategies and base suggestions on the strategies it returns, applied to the user's actual numbers. "
         "Keep answers short and clear."
     )
 
-def ask(analyzer: FinanceAnalyzer, question: str, messages: list) -> str:
+def ask(analyzer: FinanceAnalyzer, store: StrategyStore, question: str, messages: list) -> str:    
     messages.append({"role": "user", "content": question})
-
     while True:
         response = client.messages.create(
             model=MODEL,
@@ -41,7 +43,7 @@ def ask(analyzer: FinanceAnalyzer, question: str, messages: list) -> str:
         for block in response.content:
             if block.type == "tool_use":
                 print(f"  [calling {block.name}({block.input})]")
-                output = run_tool(analyzer, block.name, block.input)
+                output = run_tool(analyzer, store, block.name, block.input)
                 results.append({
                     "type": "tool_result",
                     "tool_use_id": block.id,
@@ -50,7 +52,7 @@ def ask(analyzer: FinanceAnalyzer, question: str, messages: list) -> str:
         messages.append({"role": "user", "content": results})
 
 def main():
-    
+
     user = UserProfile(    
         id=1,
         name="John Doe",
@@ -72,7 +74,10 @@ def main():
             {"name": "college fund", "target": 14000, "by": "2027-08-15"},
             {"name": "emergency fund", "target": 8000, "by": "2027-12-31"},
         ],
+
 )
+    store = StrategyStore("strategies.json")
+
     analyzer = FinanceAnalyzer(user)
     analyzer.load_transactions("transactions.csv")
 
@@ -85,7 +90,8 @@ def main():
             break
         if not question:
             continue
-        print("\nAgent:", ask(analyzer, question, messages))
+        print("\nAgent:", ask(analyzer, store, question, messages))
+
 
 
 if __name__ == "__main__":
