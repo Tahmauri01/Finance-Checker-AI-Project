@@ -133,8 +133,8 @@ class FinanceAnalyzer:
         return sorted(seen, key=lambda t: abs(t.amount), reverse=True)[:n]
 
 
-    def recuring_charges(self) -> list[str]:
-        """Finds recuring charges"""
+    def recurring_charges(self) -> list[str]:
+        """Finds recurring charges"""
         seen = set()
         repeat = set()
 

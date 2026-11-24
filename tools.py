@@ -1,19 +1,6 @@
-{
-    "name": "load_transactions",
-    "description": (
-        "Read the csv file and puts each line into a list as a transaction"
-    ),
-    "input_schema": {
-        "type": "object",
-        "properties": {
-            "csv_path": {
-                "type": "string",
-                "description": "Directory path/file name to the csv file with the transactions listed",
-            },
-        },
-        "required": ["csv_path"]
-    }
-},
+import json
+from dataclasses import asdict, is_dataclass
+
 {
     "name": "spending_by_category",
     "description": (
@@ -133,7 +120,7 @@
     }
 },
 {
-    "name": "recuring_charges",
+    "name": "recurring_charges",
     "description": (
         "Determines transactions from the same merchant that occur more than once. "
         "Returns list of the merchant names that repeat. "
@@ -180,3 +167,29 @@
         "required": ["transaction_ids", "category"]
     }
 },
+
+
+def to_text(result) -> str:
+    if isinstance(result, list):
+        result = [asdict(r) if is_dataclass(r) else r for r in result]
+    return json.dumps(result, default=str)
+
+def run_tool(analyzer, name: str, args: dict) -> str:
+    methods = {
+        "spending_by_category": analyzer.spending_by_category,
+        "compare_months": analyzer.compare_months,
+        "monthly_total": analyzer.monthly_total,
+        "least_spending_month": analyzer.least_spending_month,
+        "highest_spending_month": analyzer.highest_spending_month,
+        "largest_seen": analyzer.largest_seen,
+        "recurring_charges": analyzer.recurring_charges,
+        "find_uncategorized": analyzer.find_uncategorized,
+        "categorize": analyzer.categorize,
+    }
+
+    if name not in methods:
+        return f"Error: unknown tool: {name}"
+    try:
+        return to_text(methods[name](**args))
+    except Exception as e:
+        return f"Error: {e}"    
